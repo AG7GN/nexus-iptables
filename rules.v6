@@ -11,7 +11,8 @@
 -A INPUT -s ::1/128 ! -i lo -j DROP
 -A INPUT -i wlan0 -p udp -m multiport --dports 67,53 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
--A INPUT -p tcp -m tcp --dport 222 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE-A INPUT -p tcp -m tcp --dport 5900 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 222 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
+-A INPUT -p tcp -m tcp --dport 5900 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8000:8100 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp --dport 5353 -d ff02::fb -j ACCEPT
 -A INPUT -p ipv6-icmp -m icmp6 --icmpv6-type 1 -j ACCEPT
