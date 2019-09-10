@@ -1,6 +1,6 @@
 # hampi-iptables
 
-Version: 20190819
+Version: 20190909
 Author: Steve Magnuson, AG7GN
 
 iptables rules for the hampi image.
