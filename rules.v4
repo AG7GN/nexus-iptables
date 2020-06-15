@@ -1,4 +1,4 @@
-# Version 20200501
+# Version 20200615
 *filter
 :INPUT DROP [0:0]
 :FORWARD DROP [0:0]
@@ -19,7 +19,7 @@
 -A INPUT -p tcp -m tcp --dport 222 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
 -A INPUT -p tcp -m tcp --dport 631 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 5900 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
--A INPUT -p tcp -m tcp --dport 8000:8100 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8000:8200 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8770:8779 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 10333 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp -m udp --dport 10333 -m conntrack --ctstate NEW -j ACCEPT
