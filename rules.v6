@@ -1,4 +1,4 @@
-# Version 20200615
+# Version 20200621
 *filter
 :INPUT DROP [0:0]
 :FORWARD DROP [0:0]
@@ -11,6 +11,7 @@
 -A INPUT -s ::1/128 ! -i lo -j DROP
 -A INPUT -i wlan0 -p udp -m multiport --dports 67,53 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
+-A INPUT -p tcp -m tcp --dport 80 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 222 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
 -A INPUT -p tcp -m tcp --dport 631 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 5900 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
