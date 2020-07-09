@@ -17,12 +17,16 @@
 -A INPUT -d 224.0.0.0/4 -j DROP
 -A INPUT -p tcp -m tcp --dport 22 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
 -A INPUT -p tcp -m tcp --dport 80 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 111 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 222 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j SSHBRUTE
 -A INPUT -p tcp -m tcp --dport 631 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 2049 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 5900 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8000:8200 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8770:8779 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 10333 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p udp -m udp --dport 111 -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p udp -m udp --dport 2049 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp -m udp --dport 10333 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 0 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 3 -m conntrack --ctstate NEW -j ACCEPT
