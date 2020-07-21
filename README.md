@@ -1,9 +1,9 @@
 # hampi-iptables
 
-Version: 20200405
+Version: 2020713
 Author: Steve Magnuson, AG7GN
 
-iptables rules for the hampi image.
+iptables rules for the Nexus DR-X image.
 
 ## Installation
 
