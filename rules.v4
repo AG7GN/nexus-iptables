@@ -1,4 +1,4 @@
-# Version 20200720
+# Version 20200821
 *filter
 :INPUT DROP [0:0]
 :FORWARD DROP [0:0]
@@ -27,6 +27,7 @@
 -A INPUT -p tcp -m tcp --dport 8510:8519 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8770:8779 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 10333 --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -p udp -m udp --dport 69 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp -m udp --dport 111 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp -m udp --dport 2049 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p udp -m udp --dport 10333 -m conntrack --ctstate NEW -j ACCEPT
