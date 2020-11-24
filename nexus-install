@@ -7,3 +7,4 @@ sudo cp /etc/iptables/rules.v6 /etc/iptables/rules.v6.previous
 sudo cp -f nexus-iptables/rules.v? /etc/iptables/
 sudo iptables-restore < /etc/iptables/rules.v4
 sudo ip6tables-restore < /etc/iptables/rules.v6
+exit 0
