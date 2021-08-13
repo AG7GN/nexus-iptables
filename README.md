@@ -5,6 +5,10 @@ Author: Steve Magnuson, AG7GN
 
 iptables rules for the Nexus DR-X image.
 
+## Notes
+
+
+
 ## Installation
 
 - Open a Terminal and run these commands:
